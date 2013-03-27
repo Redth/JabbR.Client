@@ -56,6 +56,14 @@ namespace JabbR.Client
 
         public string SourceUrl { get; private set; }
 
+        public HubConnection Connection
+        {
+            get
+            {
+                return _connection;
+            }
+        }
+
         public ICredentials Credentials
         {
             get
