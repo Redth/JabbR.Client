@@ -45,6 +45,11 @@ namespace JabbR.Client.Sample
             // Connect to chat
             client.Connect(userName, password).ContinueWith(task =>
             {
+                if (task.IsFaulted)
+                {
+                    wh.Set();
+                }
+
                 LogOnInfo info = task.Result;
 
                 Console.WriteLine("Logged on successfully. You are currently in the following rooms:");
