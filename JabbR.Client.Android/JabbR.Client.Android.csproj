@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9C44170-2DC9-429E-8D51-DE60C98E17ED}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>JabbR.Client.Android</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AssemblyName>JabbR.Client.Android</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DefineConstants>ANDROID</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\SignalR\lib\Android\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="..\JabbR.Client\ClientEvents.cs">
+      <Link>ClientEvents.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\DefaultAuthenticationProvider.cs">
+      <Link>DefaultAuthenticationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\HttpHelper.cs">
+      <Link>HttpHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\IAuthenticationProvider.cs">
+      <Link>IAuthenticationProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\IJabbRClient.cs">
+      <Link>IJabbRClient.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\JabbRClient.cs">
+      <Link>JabbRClient.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\StreamExtensions.cs">
+      <Link>StreamExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\TaskAsyncHelper.cs">
+      <Link>TaskAsyncHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\ClientMessage.cs">
+      <Link>Models\ClientMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\LogOnInfo.cs">
+      <Link>Models\LogOnInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\Message.cs">
+      <Link>Models\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\Room.cs">
+      <Link>Models\Room.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\User.cs">
+      <Link>Models\User.cs</Link>
+    </Compile>
+    <Compile Include="..\JabbR.Client\Models\UserStatus.cs">
+      <Link>Models\UserStatus.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="..\JabbR.Client\JabbR.Client.csproj">
+      <Link>JabbR.Client.csproj</Link>
+    </None>
+    <None Include="..\JabbR.Client\packages.config">
+      <Link>packages.config</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SignalR\src\Microsoft.AspNet.SignalR.Client.Android\Microsoft.AspNet.SignalR.Client.Android.csproj">
+      <Project>{677A3843-1774-48D8-B00C-01F1151AF2BC}</Project>
+      <Name>Microsoft.AspNet.SignalR.Client.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
