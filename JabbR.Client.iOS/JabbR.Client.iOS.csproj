@@ -41,8 +41,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Models\" />
+    <Folder Include="..\..\..\JabbRIsMobile\JabbR.Client\JabbR.Client.iOS\Resources\" />
+    <Folder Include="..\..\..\JabbRIsMobile\JabbR.Client\JabbR.Client.iOS\Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -96,11 +96,5 @@
     <None Include="..\JabbR.Client\packages.config">
       <Link>packages.config</Link>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\SignalR\src\Microsoft.AspNet.SignalR.Client.iOS\Microsoft.AspNet.SignalR.Client.iOS.csproj">
-      <Project>{44FABCC9-52E0-43AD-ABA9-C1FA909941E0}</Project>
-      <Name>Microsoft.AspNet.SignalR.Client.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
